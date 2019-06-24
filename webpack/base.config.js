@@ -17,6 +17,10 @@ module.exports = {
       {
         use: ['style-loader','css-loader'],
         test: /\.s?css$/
+      },
+      {
+        use: 'file-loader',
+        test: [/\.(png|jpg|gif)$/, /\.(woff|woff2|eot|ttf|svg)$/]
       }]
     },
     resolve: {
@@ -27,7 +31,8 @@ module.exports = {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: '../index.html'
+        template: '../index.html',
+        inject: false
       })
     ]
 };
